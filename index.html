@@ -223,10 +223,11 @@
     }
 
     .hero-scroll {
-      position: absolute;
-      bottom: 2.5rem;
+      position: fixed;
+      bottom: 2rem;
       left: 50%;
       transform: translateX(-50%);
+      z-index: 50;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -236,6 +237,8 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       animation: scrollBounce 2s ease-in-out infinite;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
     }
 
     .scroll-line {
@@ -750,10 +753,10 @@
           <span class="hero-meta-label">Region</span>
           <span class="hero-meta-value">Jawa Tengah, Indonesia</span>
         </div>
-<div class="hero-meta-item">
-  <span class="hero-meta-label">Tools</span>
-  <span class="hero-meta-value">QGIS · Google Earth Engine · Python (Google Colab)</span>
-</div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Tools</span>
+          <span class="hero-meta-value">QGIS · Google Earth Engine · Python (Google Colab)</span>
+        </div>
       </div>
     </div>
     <div class="hero-scroll">
@@ -917,7 +920,7 @@
         <h3>Context & Objectives</h3>
         <p>
           This work was conducted during a four-month internship at
-          <strong style="color:var(--teal-soft); font-weight:500;">LPRL Serang</strong> (Loka Penataan Ruang Laut Serang),
+          <strong style="color:var(--teal-soft); font-weight:500;">LPRL Serang</strong> (Loka Penelitian Sumber Daya dan Kerentanan Pesisir),
           focusing on spatial documentation of coastal ecosystems in
           Jawa Tengah province.
         </p>
@@ -981,6 +984,17 @@
 
   <!-- ── Scripts ── -->
   <script>
+    /* ── Hide scroll indicator after scrolling ── */
+    const scrollIndicator = document.querySelector('.hero-scroll');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        scrollIndicator.style.opacity = '0';
+        scrollIndicator.style.pointerEvents = 'none';
+      } else {
+        scrollIndicator.style.opacity = '1';
+      }
+    });
+
     /* ── Scroll fade-up animations ── */
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
