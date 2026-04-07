@@ -167,19 +167,21 @@
     }
 
     .hero-title {
-      font-size: clamp(3rem, 13.5vw, 14rem);
       font-weight: 800;
-      line-height: 0.92;
+      line-height: 0.9;
       letter-spacing: -0.03em;
-      color: var(--text-primary);
       margin-bottom: 1.5rem;
       width: 100%;
     }
 
-    .hero-title span {
-      color: var(--teal-vivid);
+    .hero-title .word {
       display: block;
+      white-space: nowrap;
+      font-size: 18.2vw;
     }
+
+    .hero-title .word-white { color: var(--text-primary); }
+    .hero-title .word-teal  { color: var(--teal-vivid); }
 
     .hero-subtitle {
       font-size: 1rem;
@@ -692,7 +694,7 @@
       .nav-links { gap: 1.2rem; }
       section { padding: 4rem 1.5rem; }
       #hero { padding: 7rem 1.5rem 3rem; }
-      .hero-title { font-size: clamp(2.8rem, 13.5vw, 14rem); }
+      .hero-title .word { font-size: 16vw; }
       .map-layout { grid-template-columns: 1fr; height: auto; }
       #leaflet-map { height: 400px; }
       .map-sidebar { height: auto; }
@@ -722,8 +724,9 @@
     <div class="hero-content">
       <div class="hero-tag">Internship Portfolio · LPRL Serang</div>
       <h1 class="hero-title">
-        Coastal Ecosystem
-        <span>Jawa Tengah</span>
+        <span class="word word-white">Coastal</span>
+        <span class="word word-teal">Ecosystem</span>
+        <span class="word word-teal">Jawa Tengah</span>
       </h1>
       <p class="hero-subtitle">
         Spatial mapping and analysis of mangrove, seagrass, and coral reef ecosystems
