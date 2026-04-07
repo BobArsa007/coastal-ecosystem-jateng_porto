@@ -105,8 +105,9 @@
       position: relative;
       min-height: 100vh;
       display: flex;
-      align-items: center;
-      padding: 8rem 3rem 4rem;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 8rem 3rem 5rem;
       overflow: hidden;
     }
 
@@ -132,7 +133,8 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 760px;
+      width: 100%;
+      max-width: 100%;
     }
 
     .hero-tag {
@@ -147,7 +149,7 @@
       border: 0.5px solid var(--border-strong);
       border-radius: 2rem;
       padding: 0.35rem 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       background: rgba(13,214,184,0.05);
     }
 
@@ -165,11 +167,13 @@
     }
 
     .hero-title {
-      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-size: clamp(3rem, 13.5vw, 14rem);
       font-weight: 800;
-      line-height: 1.05;
+      line-height: 0.92;
+      letter-spacing: -0.03em;
       color: var(--text-primary);
       margin-bottom: 1.5rem;
+      width: 100%;
     }
 
     .hero-title span {
@@ -178,7 +182,7 @@
     }
 
     .hero-subtitle {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text-secondary);
       font-weight: 300;
       max-width: 560px;
@@ -688,6 +692,7 @@
       .nav-links { gap: 1.2rem; }
       section { padding: 4rem 1.5rem; }
       #hero { padding: 7rem 1.5rem 3rem; }
+      .hero-title { font-size: clamp(2.8rem, 13.5vw, 14rem); }
       .map-layout { grid-template-columns: 1fr; height: auto; }
       #leaflet-map { height: 400px; }
       .map-sidebar { height: auto; }
